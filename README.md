@@ -1,4 +1,4 @@
-<img src="icon.png" width="128" height="128" style="image-rendering: pixelated;">
+<img src="icon.git.png" width="128" height="128" style="image-rendering: pixelated;">
 
 # Мод для движка VoxelCore
 
