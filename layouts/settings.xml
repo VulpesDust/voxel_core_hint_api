@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panel size="470, 1" color="#00000044">
+
+
+    
+
+
+    <button onclick="close()">Close [Esc]</button>
+
+</panel>
+    
