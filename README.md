@@ -9,7 +9,7 @@
 ## Установка
 
 1. Убедитесь, что у вас установлен движок VoxelCore ([github/MihailRis/VoxelEngine-Cpp](https://github.com/MihailRis/VoxelEngine-Cpp)).
-2. Скопируйте файлы мода в соответствующую директорию вашего проекта (`./res/content`).
+2. Скопируйте файлы мода в соответствующую директорию вашего проекта (`./content`).
 3. Скачайте и установите зависимости:
    - [voxel_core_react v0.1.0](https://github.com/VulpesDust/voxel_core_react)
 
