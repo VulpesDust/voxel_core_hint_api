@@ -34,6 +34,6 @@ items['mod_id:item_name'] = {
 }
 
 events.emit('hint_api:hint.add_hint_items()', items)
-
+```
 ## Лицензия
 Этот мод распространяется под лицензией MIT. Подробнее см. в файле [LICENSE](LICENSE).
