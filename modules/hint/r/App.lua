@@ -22,13 +22,25 @@ events.on('hint_api:hint.add_hint_items()', function(items)
     end
 end)
 
-local function get_selected_properties()
+local function get_selected_properties_hints()
     local item_id = inventory_util.getSelectedId()
-    local properties = item.properties[item_id]['hint_api:hint']
+    local properties = item.properties[item_id]
+    if properties and properties['hint_api:hint'] then
+        return properties['hint_api:hint']
+    end
+
+    local item_name = inventory_util.getSelectedName()
+    if not item_name then
+        return
+    end
+    if not string.find(item_name, '.item$') then
+        return
+    end
+    local block_name = string.gsub(item_name, '.item$', '')
+    local block_id = block.index(block_name)
+    local properties = block.properties[block_id]
     if properties then
-        return properties
-    -- else
-        -- return block.properties[item_id]['hint_api:hint']
+        return properties['hint_api:hint']
     end
 end
 
@@ -39,11 +51,8 @@ local function get_selected_item_hints()
     if item_hints then
         return item_hints
     end
-        
-    local properties = get_selected_properties()
-    if properties then
-        return properties
-    end
+       
+    return get_selected_properties_hints()
 end
 
 
