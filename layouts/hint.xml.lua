@@ -7,10 +7,10 @@ local Doc = {
 
 local hints_offcet = {16, 16}
 
-function size_func() 
+function size_func() -- xml
     local size = gui.get_viewport()
     return -hints_offcet[1] + size[1] / 2, -hints_offcet[2] + size[2] / 2
-end -- xml
+end 
 
 function position_func() -- xml
     local size = gui.get_viewport()
