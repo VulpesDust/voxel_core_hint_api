@@ -22,6 +22,32 @@ events.on('hint_api:hint.add_hint_items()', function(items)
     end
 end)
 
+local function get_selected_properties()
+    local item_id = inventory_util.getSelectedId()
+    local properties = item.properties[item_id]['hint_api:hint']
+    if properties then
+        return properties
+    -- else
+        -- return block.properties[item_id]['hint_api:hint']
+    end
+end
+
+local function get_selected_item_hints()
+    local item_name = inventory_util.getSelectedName()
+    local item_hints = hints[item_name]
+
+    if item_hints then
+        return item_hints
+    end
+        
+    local properties = get_selected_properties()
+    if properties then
+        return properties
+    end
+end
+
+
+
 local this = {}
 
 this.global_css = './style.css'
@@ -32,18 +58,14 @@ this.global_css = './style.css'
 -- }
 
 this.rx = function()
-    local item_name = inventory_util.getSelectedName()
-    local hint = hints[item_name]
+    local item_hints = get_selected_item_hints()
 
-    if not hint then
+    if not item_hints then
         return ''
     end
 
     local xml = ''
-    for _, v in pairs(hint) do
-        -- xml = xml .. '<panel>'
-        -- xml = xml .. '<container color="#000000ff">'
-        -- xml = xml .. '<label autoresize="true" multiline="true" text-wrap="true">' .. v.button .. ' ' .. v.label .. '</label>'
+    for _, v in pairs(item_hints) do
         xml = xml .. '<label>'
         if v.button then
             xml = xml .. ' ' .. v.button
@@ -52,8 +74,6 @@ this.rx = function()
             xml = xml .. ' ' .. v.label
         end
         xml = xml .. '</label>'
-        -- xml = xml .. '</container>'
-        -- xml = xml .. '</panel>'
     end
 
     return '<panel color="#00000000">' .. xml .. '</panel>'
