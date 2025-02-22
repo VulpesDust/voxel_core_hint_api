@@ -15,7 +15,22 @@
 
 ## Использование
 
-Для добавления подсказок к предметам используйте следующий код:
+Для добавления подсказок к предметам используйте один из способов
+
+### Способ 1: Через JSON
+
+Добавьте в JSON-файл предмета следующий код:
+```json
+"hint_api:hint": [
+    {
+        "button": "ButtonName",
+        "label": "Label"
+    }
+]
+```
+Параметры `button` и `label` не обязательны. Если их не указать, будет отображаться пустая строка.
+
+### 2 Способ 2: Через Lua
 
 ```lua
 local items = {}
@@ -23,17 +38,11 @@ items['mod_id:item_name'] = {
     {
         button = 'LMB',
         label = 'left mouse button'
-    }, {
-        button = 'RMB',
-        label = 'right mouse button'
-    }, {
-        button = 'A',
-    }, {
-        label = 'B - button B'
     }
 }
 
 events.emit('hint_api:hint.add_hint_items()', items)
 ```
+
 ## Лицензия
 Этот мод распространяется под лицензией MIT. Подробнее см. в файле [LICENSE](LICENSE).
