@@ -1,5 +1,5 @@
 local react = require('vcr_0_1_0:react')
-local App = require('hint_api:hint/r/App')
+local App = require('hint/r/App')
 
 local Doc = {
     draw = function() print('[WARN] Doc not exists') end
@@ -28,7 +28,6 @@ function on_open()
     if not inited then
         Doc = react.init('hint_api:hint/r/', document, App)
         inited = true
-
     end
     if inited then
         Doc.draw()
