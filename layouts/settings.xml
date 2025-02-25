@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<panel size="470, 1" color="#00000044">
-
-
-    
-
-
-    <button onclick="close()">Close [Esc]</button>
-
-</panel>
+<container
+    pos="0, 0"
+    size-func="function() local size = gui.get_viewport(); return size[1], size[2] end"
+    color="#00000088">
+</container>
     
