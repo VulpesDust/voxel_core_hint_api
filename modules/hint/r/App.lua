@@ -61,11 +61,6 @@ local this = {}
 
 this.global_css = './style.css'
 
--- this.children_components = {
-    -- Header = 'Header/Header',
-    -- Footer = 'Footer/Footer'
--- }
-
 this.rx = function()
     local item_hints = get_selected_item_hints()
 
@@ -86,13 +81,6 @@ this.rx = function()
     end
 
     return '<panel color="#00000000">' .. xml .. '</panel>'
-    -- return [[
-    --     <panel>
-    --         <Header/>
-    --         <label>label</label>
-    --         <Footer/>
-    --     </panel>
-    -- ]]
 end
 
 return this
