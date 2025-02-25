@@ -1,4 +1,6 @@
 
+local App = require('settings/App')
+
 function on_open() -- override
 end
 
