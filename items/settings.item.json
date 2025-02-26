@@ -1,7 +1,13 @@
 {
-	"icon-type": "sprite",
-	"icon": "items:icon",
-	"caption": "settings",
+    "icon-type": "sprite",
+    "icon": "items:icon",
+    "caption": "settings",
 
-	"stack-size": 1
+    "stack-size": 1,
+    "hint_api:hint": [
+        {
+            "button": "RMB",
+            "label": "open hint settings"
+        }
+    ]
 }

@@ -4,6 +4,5 @@
     size-func="size_func"
     color="#00000000"
     interactive="false">
-    <panel id="rroot" color="#00000000" />
 </panel>
     

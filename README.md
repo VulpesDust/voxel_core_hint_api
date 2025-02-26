@@ -1,23 +1,26 @@
-<img src="icon.png" width="128" height="128" style="image-rendering: pixelated;">
+<img src="icon.png">
 
-# Мод для движка VoxelCore
+# Hint API - Мод для движка VoxelCore
 
 Этот мод добавляет функциональность отображения подсказок для предметов в руках в движке VoxelCore. Вы можете указать кнопку и текст подсказки как вместе, так и по отдельности.
 
 **Версия движка:** v0.26.2
+
 
 ## Установка
 
 1. Убедитесь, что у вас установлен движок VoxelCore ([github/MihailRis/VoxelEngine-Cpp](https://github.com/MihailRis/VoxelEngine-Cpp)).
 2. Скопируйте файлы мода в соответствующую директорию вашего проекта (`./content`).
 3. Скачайте и установите зависимости:
-   - [voxel_core_react v0.1.0](https://github.com/VulpesDust/voxel_core_react)
+   - [voxel_core_gui_util v0.2.0](https://github.com/VulpesDust/voxel_core_gui_util)
+
 
 ## Использование
 
 Мод не обязательно добавлять как зависимость для ваших модов
 
 Для добавления подсказок к предметам используйте один из способов
+
 
 ### Способ 1: Через JSON
 
@@ -31,6 +34,7 @@
 ]
 ```
 Параметры `button` и `label` не обязательны. Если их не указать, будет отображаться пустая строка.
+
 
 ### 2 Способ 2: Через Lua
 
@@ -46,14 +50,14 @@ items['mod_id:item_name'] = {
 events.emit('hint_api:hint.add_hint_items()', items)
 ```
 
+
 ## Лицензия
 Этот мод распространяется под лицензией MIT. Подробнее см. в файле [LICENSE](LICENSE).
 
 
-## Author
-
-- **Nickname**: VulpesDust
-- **Name**: George Noise
+## Автор
+- **Никнейм**: VulpesDust
+- **Имя**: George Noise
 - **Email**: george.noise.dev+github@gmail.com
-- **Alternate Email**: vulpesdust+github@gmail.com
+- **Альтернативный Email**: vulpesdust+github@gmail.com
 - **GitHub**: [VulpesDust](https://github.com/VulpesDust)

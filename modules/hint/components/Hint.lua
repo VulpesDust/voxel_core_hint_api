@@ -1,10 +1,6 @@
-local this = {
-    tag = 'label',
-    label = nil,
-    attributes = ''
-}
+local this = {}
 
-function this.draw(info, parent_id, args)
+function this.draw(gui, parent_id, args)
 
     local label = ''
     if args.button then
@@ -14,10 +10,9 @@ function this.draw(info, parent_id, args)
         label = label .. ' ' .. args.label
     end
 
-    local id = info.document_util.draw_component(info, parent_id, {
-        tag = this.tag,
-        label = label,
-        attributes = this.attributes
+    local id = gui.draw(gui, parent_id, {
+        tag = 'label',
+        label = label
     })
     return id
 end

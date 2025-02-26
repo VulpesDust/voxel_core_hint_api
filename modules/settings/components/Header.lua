@@ -1,11 +1,12 @@
-local this = {
-    tag = 'label',
-    label = 'header label',
-    attributes = ''
-}
+local this = {}
 
-function this.draw(info, parent_id, args)
-    info.document_util.draw_component(info, parent_id, this)
+function this.draw(gui, parent_id, args)
+    local id = gui.draw(gui, parent_id, {
+        tag = 'label',
+        label = 'header label',
+        atr = ''
+    })
+    return id
 end
 
 return this
