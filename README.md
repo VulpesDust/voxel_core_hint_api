@@ -48,3 +48,12 @@ events.emit('hint_api:hint.add_hint_items()', items)
 
 ## Лицензия
 Этот мод распространяется под лицензией MIT. Подробнее см. в файле [LICENSE](LICENSE).
+
+
+## Author
+
+- **Nickname**: VulpesDust
+- **Name**: George Noise
+- **Email**: george.noise.dev+github@gmail.com
+- **Alternate Email**: vulpesdust+github@gmail.com
+- **GitHub**: [VulpesDust](https://github.com/VulpesDust)
