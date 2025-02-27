@@ -2,7 +2,7 @@
     "id": "hint_api",
     "title": "Hint API",
     "creator": "VulpesDust",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "API для подсказок на экране как пользоватся объектом",
     "dependencies": [
         "gui_util"
