@@ -1,41 +1,57 @@
 local Style = require('settings/Style')
 local Header = require('settings/components/Header')
 local Button = require('settings/components/Button')
+local LeftBarButtons = require('settings/components/LeftBarButtons')
+local StyleSettings = require('settings/components/Tab/StyleSettings')
+local PositionSettings = require('settings/components/Tab/PositionSettings')
+local OffsetSettings = require('settings/components/Tab/OffsetSettings')
 
 local App = {}
 
 function App.draw(gui)
     gui.style = Style
 
+    local width = 600
+    local left_bar_width = 200
+    local height = 400
+
     local id = gui.draw(gui, gui.root, {
-        tag = 'panel',
+        tag = 'container',
         atr = {
-            size = '600',
-            color = gui.style.body_bg,
+            size = width .. ', ' .. height,
+            color = gui.style.body_bg .. '88',
             gravity = 'center-center',
-            orientation = 'horizontal'
+            orientation = 'horizontal',
+            -- padding = '8'
         }
     })
 
-    -- Header.draw(gui, panel_id)
+    
+    local tab_width = width - left_bar_width - 16 - 8
+    
+    local tabs = {
+        style = StyleSettings.draw(gui, id, {
+            width = tab_width
+        }),
+        position = PositionSettings.draw(gui, id, {
+            width = tab_width
+        }),
+        offset = OffsetSettings.draw(gui, id, {
+            width = tab_width
+        })
+    }
+    tabs.style.visible = false
+    tabs.position.visible = false
+    tabs.offset.visible = false
 
-    local buttons_panel = gui.draw(gui, id, {
-        tag = 'panel',
-        atr = {
-            size = '250',
-            color = '#00000000',
-            margin = '8'
-        }
-    })
 
-    Button.draw(gui, buttons_panel, {
-        label = 'asdf \n asdf2',
-        click = 'b(\'asdf, asdf2\')'
+    
+    local bar = LeftBarButtons.draw(gui, id, {
+        width = left_bar_width,
+        tabs = tabs
     })
-    Button.draw(gui, buttons_panel, {
-        label = 'asdf3',
-        click = "b('asdf3', 'asdf4', 'asdf5', 'asdf6')"
-    })
+    
+    
 
 end
 
