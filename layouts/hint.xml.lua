@@ -1,16 +1,16 @@
 local doc_util = require('gui_util:doc')
 local App = require('hint/App')
 
-local hints_offcet = {16, 16}
+local hints_offset = {16, 16}
 
 function size_func() -- xml
     local size = gui.get_viewport()
-    return -hints_offcet[1] + size[1] / 2, -hints_offcet[2] + size[2] / 2
+    return -hints_offset[1] + size[1] / 2, -hints_offset[2] + size[2] / 2
 end 
 
 function position_func() -- xml
     local size = gui.get_viewport()
-    return hints_offcet[1] + size[1] / 2, hints_offcet[2] + size[2] / 2
+    return hints_offset[1] + size[1] / 2, hints_offset[2] + size[2] / 2
 end
 
 local function redraw()
